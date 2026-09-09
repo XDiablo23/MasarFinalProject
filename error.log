@@ -1,0 +1,6 @@
+mprotect() failed [13] Permission denied
+mprotect() failed [13] Permission denied
+mprotect() failed [13] Permission denied
+mprotect() failed [13] Permission denied
+[Tue Sep 08 00:59:13.836279 2026] [mpm_prefork:notice] [pid 159302:tid 159302] AH00163: Apache/2.4.68 (Debian) configured -- resuming normal operations
+[Tue Sep 08 00:59:13.836306 2026] [core:notice] [pid 159302:tid 159302] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
